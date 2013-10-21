@@ -3,7 +3,7 @@
     toastr.options.positionClass = "toast-bottom-right";
 
     var imageSettings = {
-        imageBasePath: '~/plugins/Nop.Custom/MyProductList'
+        imageBasePath: '~/Images/MyProductList'
     };
 
     var routes = [
