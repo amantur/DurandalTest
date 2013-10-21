@@ -1,0 +1,37 @@
+﻿<div class="view">
+    <header>
+        <button class="btn btn-info btn-force-refresh pull-right" data-bind="click: refresh">
+            <i class="icon-refresh"></i> Refresh
+        </button>
+        <h4 class="page-title" data-bind="text: title"></h4>
+        <address><span data-bind="text: myProducts().length"></span> products found</address> 
+        <form class="navbar-form pull-right" role="search" data-bind="submit: search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </header>
+    <div class="article-content">
+        <section data-bind="foreach: myProducts">
+            <div class="row">
+                <div class="col-md-4 pull-left">
+                    <label data-bind="text: ProductName"></label>
+                </div>
+                <div class="col-md-8 pull-right" data-bind="foreach: Items">
+                    <div class="row-fluid">
+                        <div class="span5">
+                            <span data-bind="text: FullName"></span>
+                        </div>
+                        <div class="span7">
+                            <span data-bind="text: Note"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    Id: <span data-bind="text: Id"></span>, CustomerId: <span data-bind="text: CustomerId"></span>, ProductId: <span data-bind="    text: ProductId"></span>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

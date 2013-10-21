@@ -1,0 +1,31 @@
+﻿<div>
+    <header>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" data-bind="attr: { href: router.navigationModel()[0].hash }">
+                    <i class="glyphicon glyphicon-home"></i>
+                    <span>My Products</span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <div>
+                    <ul class="nav navbar-nav" data-bind="foreach: router.navigationModel">
+                        <li data-bind="css: { active: isActive }">
+                            <a data-bind="attr: { href: hash }, html: title"></a>
+                        </li>
+                    </ul>
+                    <div class="loader pull-right" data-bind="css: { active: router.isNavigating }">
+                        <i class="glyphicon glyphicon-spinner glyphicon-2x glyphicon-spin"></i>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="content" class="main container" data-bind="router: { transition: 'entrance' }"></section>
+</div>

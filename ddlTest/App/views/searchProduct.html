@@ -1,0 +1,39 @@
+﻿<div class="view">
+    <div class="row">
+        <div class="col-md-8">
+            <h4 class="page-title" data-bind="text: title"></h4>
+
+            <address><span data-bind="text: results().length"></span>&nbsp;products found</address>
+        </div>
+        <div class="col-md-4 pull-right">
+            <form class="navbar-form pull-right" role="search" data-bind="submit: search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" data-bind="value: query, valueUpdate: 'afterkeydown'">
+                </div>
+                <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span>&nbsp;Search</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <section data-bind="foreach: results()">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-md-6 pull-left">
+                        <label data-bind="text: Name"></label><br />
+                        <span class="text-warning" data-bind="html: Category"></span>
+                    </div>
+                    <div class="col-md-2 pull-right">
+                        <button class="btn btn-info btn-xs pull-right" data-bind="click: $parent.addProduct">
+                            <span class="glyphicon glyphicon-plus"></span>Add
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" data-bind="html: Description"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
