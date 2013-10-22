@@ -1,7 +1,7 @@
 ﻿requirejs.config({
     paths: {
         'text': "../Scripts/text",
-        'ko': "../Scripts/knockout-2.3.0",
+        'knockout': "../Scripts/knockout-2.3.0",
         'postal': "../Scripts/postal",
         'underscore': "../Scripts/underscore.min",
         'amplify': "../Scripts/amplify",
@@ -13,7 +13,6 @@
 });
 
 define('jquery', [], function () { return jQuery; });
-define('knockout', [], function () { return ko; });
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'service/logger'],
     function (system, app, viewLocator) {

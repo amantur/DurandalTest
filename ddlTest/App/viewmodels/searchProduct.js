@@ -1,4 +1,4 @@
-﻿define(['ko',
+﻿define(['knockout',
         'underscore',
         'postal',
         'service/dataService',
