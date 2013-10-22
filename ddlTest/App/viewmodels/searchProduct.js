@@ -1,13 +1,12 @@
-﻿define(['ko',
+﻿define(['knockout',
         'underscore',
         'postal',
         'service/dataService',
 		'service/logger',
         'durandal/system'],
 function (ko, _, postal, dataService, logger, system) {
-var that = this;
-that.results = ko.observableArray([]);
-that.query = ko.observable('');
+var results = ko.observableArray([]);
+var query = ko.observable('');
 
 var SearchProduct = {
     activate: activate,
@@ -29,12 +28,12 @@ function addProduct(item) {
 }
 
 function search() {
-    return dataService.searchProduct(that.query()).then(function (data) {
-        that.results([]);
-        that.results(data);
+    return dataService.searchProduct(query()).then(function (data) {
+        results([]);
+        results(data);
     }).fail(function (jqXHR, textStatus) {
         var msg = 'Error searching product: ' + textStatus;
-        logger.logError(msg, jqXHR, system.getModuleId(dataservice), true);
+        logger.logError(msg, jqXHR, system.getModuleId(dataService), true);
     });
 }
 });

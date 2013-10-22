@@ -1,5 +1,5 @@
-﻿define(['service/dataService', 'service/logger'],
-    function (dataservice, logger) {
+﻿define(['knockout', 'service/dataService', 'service/logger'],
+    function (ko, dataservice, logger) {
 
         var myProducts = ko.observableArray();
         var initialized = false;
