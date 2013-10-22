@@ -14,7 +14,7 @@ namespace Nop.Plugin.NopCustom.MyProductList.Controllers
             return View();
         }
 
-        public ViewResult Add()
+        public ViewResult Test()
         {
             return View();
         }
